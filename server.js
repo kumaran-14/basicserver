@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-
+const signale = require('signale')
 const app = express()
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -23,5 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 //route handlers
 
 app.listen(3000,() => {
-  console.log('SERVER STARTED. LISTENEING ON PORT 3000')
+	signale.success('Server started...')
 })
+
